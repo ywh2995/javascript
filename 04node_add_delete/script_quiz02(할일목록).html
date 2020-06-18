@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h2>할일 목록 만들기</h2>
+<input type="text" id="nick" placeholder="이름을 입력하세요">
+<button type="button" class="btn1">확인</button>
+<h2 class="welcome"></h2>
+
+<hr>
+
+<input type="text" id="work" placeholder="당신의 할일을 적으세요">
+<button type="button" class="btn2">확인</button>
+<div class="list"></div>
+
+<script>
+    var btn1 = document.querySelector(".btn1");
+    var nick = document.getElementById("nick");
+    var welcome = document.querySelector(".welcome");
+
+    btn1.onclick = function() {
+        var result = nick.value;
+        btn1.style.display = "none";
+        nick.style.display = "none";
+        welcome.innerHTML = result + "님 안녕하세요";
+    }
+
+    var btn2 = document.querySelector(".btn2");
+    var list = document.querySelector(".list");
+    var ul = document.createElement("ul");
+
+    btn2.onclick = function() {
+        var work = document.getElementById("work");
+        var result = work.value;
+        var li = document.createElement("li");
+        li.innerHTML = result;
+        ul.appendChild(li);
+        list.appendChild(ul);
+        result = "";
+    }
+</script>
+</body>
+</html>
