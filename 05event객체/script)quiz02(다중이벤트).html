@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-collapse: 0; border-spacing: 0;}
+        thead tr th,
+        tbody tr td {border: 1px solid #777;}
+    </style>
+</head>
+<body>
+    <h2>event속성을 이용해서 다음을 구현하세요</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>삭제</th>
+            </tr>
+            <tbody class = "list">
+                <tr>
+                    <td>1</td>
+                    <td>첫글</td>
+                    <td>hello</td>
+                    <td><button type = "button">삭제</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>첫글</td>
+                    <td>hello</td>
+                    <td><button type = "button">삭제</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>첫글</td>
+                    <td>hello</td>
+                    <td><button type = "button">삭제</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>첫글</td>
+                    <td>hello</td>
+                    <td><button type = "button">삭제</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>첫글</td>
+                    <td>hello</td>
+                    <td><button type = "button">삭제</td>
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+
+    <script>
+        var list = document.querySelectorAll(".list button");
+
+        for(var i = 0; i < list.length; i++) {
+            list[i].onclick = function() {
+                event.target.parentElement.parentElement.remove();//현재 대상의 부모노드 자체를 삭제
+            }
+        }
+    </script>
+</body>
+</html>
